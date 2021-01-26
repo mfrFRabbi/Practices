@@ -1,0 +1,44 @@
+
+          Panel Introduce      
+
+
+        ImageIcon icon = new ImageIcon("smile.png");
+        JFrame frame = new JFrame();
+
+        JPanel blackPanel = new JPanel();
+        JPanel redPanel = new JPanel();
+        JPanel magentaPanel = new JPanel();
+
+        JLabel label = new JLabel();
+
+        label.setText("Hello!");
+        label.setIcon(icon);
+        label.setVerticalAlignment(JLabel.TOP);
+        label.setHorizontalTextPosition(JLabel.CENTER);
+        label.setVerticalTextPosition(JLabel.BOTTOM);
+        Border border = BorderFactory.createLineBorder(Color.cyan);
+        label.setBorder(border);
+
+
+
+        blackPanel.setBackground(Color.black);
+        blackPanel.setBounds(0,0,300,300);
+
+        redPanel.setBackground(Color.RED);
+        redPanel.setBounds(300,0,300,300);
+        redPanel.setLayout(new BorderLayout());     //set border
+
+        magentaPanel.setBackground(Color.MAGENTA);
+        magentaPanel.setBounds(0,300,600,300);
+
+        frame.setTitle("PanelIntroduce");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(1000,1000);
+        frame.setLayout(null);
+        frame.setVisible(true);
+
+        redPanel.add(label);
+
+        frame.add(blackPanel);
+        frame.add(redPanel);
+        frame.add(magentaPanel);
