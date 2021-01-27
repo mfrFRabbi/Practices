@@ -5,27 +5,28 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MyFrame extends JFrame implements ActionListener {
+public class MyFrame extends JFrame{
+    JButton button;
+    JLabel messageLable;
     public MyFrame(){
-    //    JFrame frame = new JFrame();
-        JButton button = new JButton();
-        button.setBounds(50,50,100,50);
+        button = new JButton();
+        messageLable = new JLabel();
+        button.setBounds(100,100,50,30);
         button.addActionListener(e -> {
-            System.out.println("Button is working");
+            if(e.getSource() == button)
+            {
+                messageLable.setText("This is message");
+                messageLable.setForeground(Color.RED);
+                messageLable.setBounds(100,200,500,30);}
+
         });
+
+        this.add(messageLable);
         this.add(button);
-        this.setTitle("SimpleCalculator");
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(500,500);
-        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-        this.setResizable(false);
+        this.setLayout(null);
         this.setVisible(true);
-
-        this.getContentPane().setBackground(Color.darkGray);
-
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        System.out.println("test");
-    }
 }
