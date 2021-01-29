@@ -5,28 +5,52 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MyFrame extends JFrame{
-    JButton button;
-    JLabel messageLable;
-    public MyFrame(){
-        button = new JButton();
-        messageLable = new JLabel();
-        button.setBounds(100,100,50,30);
-        button.addActionListener(e -> {
-            if(e.getSource() == button)
-            {
-                messageLable.setText("This is message");
-                messageLable.setForeground(Color.RED);
-                messageLable.setBounds(100,200,500,30);}
-
-        });
-
-        this.add(messageLable);
-        this.add(button);
+public class MyFrame extends JFrame implements ActionListener {
+    JRadioButton pizzaButton;
+    JRadioButton hamburgerButton;
+    JRadioButton hotdogButton;
+    public MyFrame() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(500,500);
-        this.setLayout(null);
+        this.setLayout(new FlowLayout());
+
+        pizzaButton = new JRadioButton("pizza");
+        hamburgerButton = new JRadioButton("hamburder");
+        hotdogButton = new JRadioButton("hotdog");
+
+        ButtonGroup group = new ButtonGroup();
+        group.add(pizzaButton);
+        group.add(hamburgerButton);
+        group.add(hotdogButton);
+
+        pizzaButton.addActionListener(this);
+        hamburgerButton.addActionListener(this);
+        hotdogButton.addActionListener(this);
+
+        this.add(pizzaButton);
+        this.add(hamburgerButton);
+        this.add(hotdogButton);
+        this.pack();
         this.setVisible(true);
+
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == pizzaButton){
+            System.out.println("this is pizza");
+            pizzaButton.setEnabled(false);
+        }
+        if(e.getSource() == hamburgerButton){
+            System.out.println("this is humburger");
+            hamburgerButton.setEnabled(false);
+        }
+        if(e.getSource() == hotdogButton){
+            System.out.println("this is hotdog");
+            hotdogButton.setEnabled(false);
+        }
+
     }
 
 }
+
+

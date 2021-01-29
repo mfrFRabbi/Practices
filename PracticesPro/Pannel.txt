@@ -42,3 +42,18 @@
         frame.add(blackPanel);
         frame.add(redPanel);
         frame.add(magentaPanel);
+
+
+        //        JOptionPane.showMessageDialog(null,"This is a plain sms","Hi",JOptionPane.PLAIN_MESSAGE,icon);
+        //        JOptionPane.showMessageDialog(null,"This is an info sms","Hi",JOptionPane.INFORMATION_MESSAGE);
+        //        JOptionPane.showMessageDialog(null,"This is a warning sms","Hi",JOptionPane.WARNING_MESSAGE);
+        //        JOptionPane.showMessageDialog(null,"Is this a Question sms?","Hi",JOptionPane.QUESTION_MESSAGE);
+        //        JOptionPane.showMessageDialog(null,"This is an Error sms","Hi",JOptionPane.ERROR_MESSAGE);
+
+        //          JOptionPane.showConfirmDialog(null,"Bro,do you even code?","ConfirmDialog",
+        //                  JOptionPane.YES_NO_CANCEL_OPTION);
+
+                String[] response ={"No,YOU are","Thank you","blass!"};
+
+                  JOptionPane.showOptionDialog(null,"You are awesome!!","OptionDialog",JOptionPane.YES_NO_CANCEL_OPTION,
+                          JOptionPane.INFORMATION_MESSAGE,icon,response,0);
