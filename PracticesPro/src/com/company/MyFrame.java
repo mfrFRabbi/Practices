@@ -1,33 +1,16 @@
 package com.company;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-public class MyFrame extends JFrame implements ActionListener {
-    JComboBox comboBox;
-    public MyFrame() {
-        String[] comboProperty = {"tiger","lion","monkey","snake","bird"};
-        comboBox = new JComboBox(comboProperty);
-        comboBox.addActionListener(this);
-        this.add(comboBox);
+
+public class MyFrame extends JFrame {
+    DragPanel dragPanel = new DragPanel();
+    MyFrame(){
+        this.add(dragPanel);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setLayout(new FlowLayout());
-        this.pack();
+        this.setSize(600,600);
         this.setVisible(true);
-
     }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == comboBox){
-            System.out.println(comboBox.getSelectedItem());
-            comboBox.setEnabled(false);
-        }
-
-    }
-
 }
 
 
