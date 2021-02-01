@@ -3,9 +3,9 @@ package com.company;
 import javax.swing.*;
 import java.awt.*;
 
-public class Graphics2D extends JPanel {
+public class Graphics2DD extends JPanel {
 
-    public Graphics2D() {
+    public Graphics2DD() {
         this.setPreferredSize(new Dimension(500,500));
     }
 
